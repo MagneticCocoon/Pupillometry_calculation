@@ -1,0 +1,18 @@
+<Issue> 
+SMI IDF converter doesn't make mapped pupil diameter (mm) for some files for unknown technical problem, while pupil diameter (px) for X and Y is always extracted. Now we use px data to convert it into mm.
+
+<Why mm unit needed>
+	- PFE correction is based on mm
+	- Literature studies about pupilometry is on mm. If px, it's hard to estimate
+
+<Rational>
+It is a linear mapping, since the distance between screen and participant is controlled in this study. All the effects that could be found in millimeters will be there in pixels
+
+
+<scale procedure>
+We calculate the quotient of pupil diameter in pixel to the mapped diameter over 100 ms intervals. Also calculate the standard deviation of these quotients. If the SD is low, we take the mean as mapping constant.
+
+- Use NP01_S_Samples.txt
+- Use the first segment for 100ms (25 frame)
+- Mean = 3.07, SD=0.044
+- Since SD is small, use 3.07

@@ -1,0 +1,78 @@
+<Pupil size calculation>
+
+- We use pupil size (pupil diameter horizontal) as a measure of cognitive load
+
+- Participants played two scenarios: S (Subarachnoid hemorrhage) and G (Gastrointestinal Bleeding), which will be averaged.
+
+- Timestamps are not arranged in order: sorting needed at the beginning
+
+- To compensate delay in pupil response, we add 300ms to the timestamps of pupil sizes (not sure how to do it now...)
+
+- We only use Fixation R (not Fixation L) in Event Type 
+
+
+
+
+1. PFE correction for all Avg.PupilSize X
+	
+- We correct off-axis distortion (PFE:Pupil foreshortening error)
+	
+- 3 values of Fixations are used: Location X, Location Y, Avg.PupilSize X
+	
+- Codes in PFE_correction is used
+
+
+
+2. Baseline reduction
+	
+- We compensate illuminance effect by subtracting pupil size in baseline from pupil size in scenario
+	
+- In PA group, two baselines exist: BlockBase (baseline for play) and PauseBase (baseline for pause).
+		
+Block pupil size = Block pupil size - BlockBase
+		
+Pause pupil size = Pause pupil size - PauseBase		
+	
+
+- PlayBase:
+For PA group, 
+		
+Starts: # Message: SAH_PlayBase_Start 
+		
+Ends: # Message: SAH_PauseBase_Start
+	
+For NP group, 
+		
+Starts: # Message: SAH_PlayBase_Start 
+		
+Ends: # Message: SAH_Scenario_Start
+
+	
+
+- PauseBase:
+		
+Starts: # Message: SAH_PauseBase_Start  
+		
+Ends: # Message: SAH_Scenario_Start
+
+	
+- Play:
+		
+Starts: # Message: SAH_Scenario_Start
+		
+Ends: navigate_to /game/endfeedback/
+	
+
+- Pause:
+		
+Starts: pause {'total':'10','paused':true,'current':x}
+		
+Ends: pause {'total':'10','paused':false,'current':x}
+	
+- In NP group, there's neither Pause or PauseBase.
+
+
+3. Lastly, we compare the average pupil diameters in two groups: PA and NP
+
+
+
