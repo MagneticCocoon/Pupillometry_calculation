@@ -7,7 +7,7 @@ This is the 2nd study (B2) in IGBL (Indicator of Game-Based Learning) project.
 It is published as:
 Lee, J. Y., Donkers, J., Jarodzka, H., Sellenraad, G., & Van Merriënboer, J. J. (2020). Different effects of pausing on cognitive load in a medical simulation game. Computers in Human Behavior, 110, 106385.
 
-## Description of the project
+## Acknowledgement
 This work was supported by the Netherlands Organization for Scientific Research (NWO) [grant numbers 055.16.117]. (https://www.nwo.nl/en/projects/05516117)
 
 ## Pupillometry analysis
