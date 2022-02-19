@@ -2,7 +2,7 @@
 Calculation of pupillometry 
 
 ## General Description
-This is the first study in IGBL (Indicator of Game-Based Learning) project
+This is the 2nd study (B2) in IGBL (Indicator of Game-Based Learning) project
 
 ## Description of the project
 This work was supported by the Netherlands Organization for Scientific Research (NWO) [grant numbers 055.16.117]. (https://www.nwo.nl/en/projects/05516117)
